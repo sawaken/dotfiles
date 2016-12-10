@@ -1,0 +1,48 @@
+# 要素のクラスの調べ方：
+#   [View]->[Developer]->[Toggle Developer Tools]からインスペクタを開く
+#   [Elements]タブを選択し、左上のアイコン(select an element in the page to inspect it)
+#   をクリックして調べたい要素を選択する
+
+'*':
+  # command-paletteはよく使うのでctrl-iに割り当てる
+  'ctrl-i': 'command-palette:toggle'
+  # ctrl-shift-tでターミナルを開く
+  'ctrl-T': 'platformio-ide-terminal:toggle'
+  # 方向キーでtab移動
+  'right': 'pane:show-next-item'
+  'left': 'pane:show-previous-item'
+  'down': 'window:focus-next-pane'
+  'up': 'window:focus-previous-pane'
+  # 'fcitx-remote -c'が存在する環境用。存在しなければ何も起こらない。
+  # normal-modeでctrl-jするとIMEがOFFになる。
+  # 'ctrl-j': 'atom-shell-commands:ime-off'
+# autocomplete-plusのカーソル移動はemacs式にする
+'body atom-text-editor.autocomplete-active':
+  'ctrl-p': 'autocomplete-plus:move-up'
+  'ctrl-n': 'autocomplete-plus:move-down'
+'atom-workspace atom-text-editor:not([mini])':
+  # 誤ってnormal-modeでctrl-jするとjoin-linesされて煩わしいのでunbindする.
+  'ctrl-j': 'unset!'
+'atom-text-editor.vim-mode-plus:not(.normal-mode)':
+  # normal-modeに戻るキーは, より押しやすいctrl-jに割り当てる
+  'ctrl-j': 'vim-mode-plus:activate-normal-mode'
+'atom-text-editor.vim-mode-plus:not(.insert-mode)':
+  # 左右方向キーでtab移動
+  'right': 'pane:show-next-item'
+  'left': 'pane:show-previous-item'
+  'down': 'window:focus-next-pane'
+  'up': 'window:focus-previous-pane'
+'atom-text-editor.mini':
+  # インラインテキストボックスでEmacs風のカーソル移動を有効にする
+  'ctrl-p': 'core:move-up'
+  'ctrl-n': 'core:move-down'
+  'ctrl-b': 'core:move-left'
+  'ctrl-f': 'core:move-right'
+  'ctrl-P': 'core:select-up'
+  'ctrl-N': 'core:select-down'
+  'ctrl-F': 'core:select-right'
+  'ctrl-B': 'core:select-left'
+  'ctrl-h': 'core:backspace'
+  'ctrl-d': 'core:delete'
+  'ctrl-a': 'editor:move-to-first-character-of-line'
+  'ctrl-e': 'editor:move-to-end-of-line'

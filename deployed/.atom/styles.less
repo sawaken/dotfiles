@@ -1,0 +1,32 @@
+/*
+ * DOM要素のClass名を調べるためには, Toggle Dev Toolsを開く.
+ * このファイルは, 再起動せずとも再読込される.
+ */
+
+.tree-view {
+
+}
+
+// style the background and foreground colors on the atom-text-editor-element
+// itself
+atom-text-editor {
+
+}
+
+// To style other content in the text editor's shadow DOM, use the ::shadow
+// expression
+atom-text-editor::shadow {
+
+  // 例) カーソルを赤くする
+  /*
+  .cursor {
+    border-left-color: red;
+  }
+  */
+
+  // Invisiblesの色を濃くする
+  .invisible-character {
+    color: rgba(255, 255, 255, 0.2);
+  }
+
+}

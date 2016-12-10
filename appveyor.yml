@@ -1,0 +1,9 @@
+install:
+  - choco install ruby
+
+build: off
+
+test_script:
+  - rake generate-link-bat
+  - link.bat
+  - dir ..

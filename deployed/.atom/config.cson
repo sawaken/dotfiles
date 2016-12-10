@@ -1,0 +1,95 @@
+"*":
+  "atom-ctags":
+    autoBuildTagsWhenActive: false
+    cmd: "ctags"
+  "atom-shell-commands":
+    commands: [
+      {
+        name: "ime-off"
+        command: "/usr/bin/fcitx-remote"
+        arguments: [
+          "-c"
+        ]
+        options:
+          silent: true
+      }
+    ]
+  "autocomplete-plus":
+    confirmCompletion: "tab"
+    useCoreMovementCommands: false
+  autosave:
+    enabled: true
+  "bracket-matcher":
+    autocompleteBrackets: false
+    autocompleteSmartQuotes: false
+  core:
+    allowPendingPaneItems: false
+    autoHideMenuBar: true
+    disabledPackages: [
+      "symbols-view"
+      "highlight-selected"
+      "Ocamltop-HTML"
+    ]
+    excludeVcsIgnoredPaths: false
+    packagesWithKeymapsDisabled: [
+      "term3"
+      "color-picker"
+      "git-plus"
+    ]
+    telemetryConsent: "limited"
+    themes: [
+      "atom-dark-ui"
+      "one-dark-syntax"
+    ]
+  editor:
+    backUpBeforeSaving: true
+    invisibles: {}
+    showInvisibles: true
+  "exception-reporting":
+    userId: "9437e86a-0252-ab2d-dbf9-ca15cf8a20e4"
+  "git-plus": {}
+  "haskell-ghc-mod": {}
+  linter:
+    errorPanelHeight: 26
+  "linter-rubocop": {}
+  minimap:
+    plugins:
+      "minimap-autohide": true
+      "minimap-autohideDecorationsZIndex": 0
+  rspec:
+    command: "bundle exec rspec"
+  "rubocop-auto-correct": {}
+  "ruby-test": {}
+  "spell-check":
+    grammars: [
+      "source.asciidoc"
+      "text.git-commit"
+    ]
+  "split-diff":
+    diffWords: true
+    ignoreWhitespace: true
+    leftEditorColor: "red"
+    rightEditorColor: "green"
+    syncHorizontalScroll: true
+  term3:
+    colors:
+      background:
+        alpha: 1
+        blue: 41
+        green: 41
+        red: 41
+  "todo-show":
+    ignoreThesePaths: [
+      "**/node_modules/*"
+      "**/vendor/*"
+      "**/bower_components/*"
+      "**/coverage/*"
+    ]
+  "toggle-quotes": {}
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  welcome:
+    showOnStartup: false
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
+    removeTrailingWhitespace: true
