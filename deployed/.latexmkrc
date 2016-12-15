@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 
-$latex            = 'platex %O -halt-on-error -shell-escape -synctex=1 %S';
+$latex            = 'platex %O -halt-on-error -interaction=nonstopmode -file-line-error -shell-escape -synctex=1 %S';
 $pdflatex         = 'pdflatex %O -shell-escape -synctex=1 %S';
 $bibtex           = 'bibtex %O %B';
 $dvipdf           = 'dvipdfmx %O -o %D %S';
