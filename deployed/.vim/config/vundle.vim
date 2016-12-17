@@ -11,6 +11,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'thinca/vim-quickrun'
+" C-d,C-uをスムーズかつ加速度的にする奴
+Plugin 'yonchu/accelerated-smooth-scroll'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
