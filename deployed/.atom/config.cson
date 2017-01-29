@@ -93,3 +93,5 @@
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
     removeTrailingWhitespace: true
+  wordcount:
+    alwaysOn: true
