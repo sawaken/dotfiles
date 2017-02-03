@@ -32,30 +32,29 @@
   - 'merge-conflicts'
   - 'git-control'
   - 'git-time-machine'
-'言語/ファイル種別':
-  'Ruby':
-    - 'linter-rubocop'
-    - 'rubocop-auto-correct'
-    - 'language-rspec'
-    - 'rspec'
-  'CoffeeScript':
-    - 'linter-coffeelint'
-  'TypeScript':
-    - 'atom-typescript'
-    - 'linter-tslint'
-  'ShellScript':
-    - 'linter-shellcheck'
-  'Lisp':
-    - 'language-lisp'
-  'OCaml':
-    - 'language-ocaml'
-  'LaTex':
-    - 'language-latex'
-    - 'latex'
-  'PDF':
-    - 'pdf-view'
-  'CSV':
-    - 'tablr'
-  'StyleSheet':
-    - 'linter-csslint'
-    - 'linter-scss-lint'
+'Ruby':
+  - 'linter-rubocop'
+  - 'rubocop-auto-correct'
+  - 'language-rspec'
+  - 'rspec'
+'CoffeeScript':
+  - 'linter-coffeelint'
+'TypeScript':
+  - 'atom-typescript'
+  - 'linter-tslint'
+'ShellScript':
+  - 'linter-shellcheck'
+'Lisp':
+  - 'language-lisp'
+'OCaml':
+  - 'language-ocaml'
+'LaTex':
+  - 'language-latex'
+  - 'latex'
+'PDF':
+  - 'pdf-view'
+'CSV':
+  - 'tablr'
+'StyleSheet':
+  - 'linter-csslint'
+  - 'linter-scss-lint'
