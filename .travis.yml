@@ -14,3 +14,4 @@ script:
   - rake status
   - rake unlink
   - rake status
+  - rake install

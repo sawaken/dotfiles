@@ -7,3 +7,4 @@ test_script:
   - rake generate-link-bat
   - link.bat
   - dir ..
+  - rake install
