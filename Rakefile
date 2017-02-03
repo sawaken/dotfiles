@@ -94,3 +94,37 @@ task 'generate-link-bat' do
   end
   puts "#{LINK_BAT_FILENAME} is generated"
 end
+
+# setup
+# ----------
+
+desc 'install all'
+task 'install' => ['install-vundle', 'install-tpm', 'install-atom-pkgs']
+
+desc 'install vim Vundle'
+task 'install-vundle' do
+  target = './deployed/.vim/bundle/Vundle.vim'
+  if File.exist?(target)
+    puts "#{target} alredy exists"
+  else
+    sh "git clone https://github.com/VundleVim/Vundle.vim.git #{target}"
+    puts 'Launch vim and run :PluginInstall'
+  end
+end
+
+desc 'install Tmux Plugin Manager'
+task 'install-tpm' do
+  target = './deployed/.tmux/plugins/tpm'
+  if File.exist?(target)
+    puts "#{target} alredy exists"
+  else
+    sh "git clone https://github.com/tmux-plugins/tpm #{target}"
+  end
+end
+
+desc 'install atom packages'
+task 'install-atom-pkgs' do
+  require 'yaml'
+  pkgs = YAML.load(File.read('./deployed/.atom/packages.yml')).values.flatten
+  sh "apm install #{pkgs.join(' ')}"
+end
