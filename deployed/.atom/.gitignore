@@ -7,6 +7,6 @@
 !/snippets.cson
 !/styles.less
 !/README.md
-!/atom-pkg-list.yml
+!/packages.yml
 !/commands/
 !/commands/*
