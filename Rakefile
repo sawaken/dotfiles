@@ -108,7 +108,13 @@ task 'install-vundle' do
     puts "#{target} alredy exists"
   else
     sh "git clone https://github.com/VundleVim/Vundle.vim.git #{target}"
-    puts 'Launch vim and run :PluginInstall'
+    begin
+      sh 'vim --version'
+    rescue
+      puts 'vim is not installed'
+    else
+      sh 'vim +PluginInstall +qall'
+    end
   end
 end
 
