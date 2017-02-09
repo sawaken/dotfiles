@@ -126,5 +126,11 @@ desc 'install atom packages'
 task 'install-atom-pkgs' do
   require 'yaml'
   pkgs = YAML.load(File.read('./deployed/.atom/packages.yml')).values.flatten
-  sh "apm install #{pkgs.join(' ')}"
+  begin
+    sh 'apm --version'
+  rescue
+    puts 'apm is not installed'
+  else
+    sh "apm install #{pkgs.join(' ')}"
+  end
 end
