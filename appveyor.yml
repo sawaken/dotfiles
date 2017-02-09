@@ -4,7 +4,10 @@ install:
 build: off
 
 test_script:
-  - rake generate-link-bat
-  - link.bat
-  - dir ..
+  - rake status
+  - rake link
+  - rake status
+  - rake unlink
+  - rake status
+  - rake link-force
   - rake install

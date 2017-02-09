@@ -10,18 +10,10 @@ DOTFILES
 * git
 * rake (ruby 2.0~)
 
-## Install on Mac/Linux
+## Install on Mac/Linux/Windows
 ```sh
 $ git clone git@github.com:sawaken/dotfiles.git
 $ cd dotfiles
 $ rake link
 ```
 see also `rake -T`.
-
-## Install on Windows (experimental)
-```
-$ git clone git@github.com:sawaken/dotfiles.git
-$ cd dotfiles
-$ rake generate-link-bat
-# link.bat
-```

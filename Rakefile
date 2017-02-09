@@ -4,14 +4,12 @@
 BASENAMES = Dir.glob('./deployed/.*[^~#.]').map { |f| File.basename(f) }
 # Basenames of all dotfiles in $HOME
 BASENAMES_HOME = Dir.glob("#{ENV['HOME']}/.*[^~#.]").map { |f| File.basename(f) }
-# linking .bat filename
-LINK_BAT_FILENAME = 'link.bat'
 
 # dotfile's full-path
 # ----------
 
 def home(basename)
-  ENV['HOME'] + '/' + basename
+  File.expand_path(Dir.home + '/' + basename)
 end
 
 def original(basename)
@@ -27,12 +25,12 @@ end
 
 def linked_to_me?(basename)
   File.exist?(home(basename)) && File.symlink?(home(basename)) &&
-    `readlink #{home(basename)}`.chomp == original(basename)
+    File.readlink(home(basename)) == original(basename)
 end
 
 def linked_to_others?(basename)
   File.exist?(home(basename)) && File.symlink?(home(basename)) &&
-    `readlink #{home(basename)}`.chomp != original(basename)
+    File.readlink(home(basename)) != original(basename)
 end
 
 def linked_to_nonexistence?(basename)
@@ -91,22 +89,6 @@ task 'status' do
   s.call { |n| linked_to_others?(n) || linked_to_nonexistence?(n) || entity?(n) }
 end
 
-desc 'Windowsでリンクを張るためのBATファイルを生成する'
-task 'generate-link-bat' do
-  File.open("./#{LINK_BAT_FILENAME}", 'w') do |f|
-    f.puts 'rem 管理者権限で実行すること'
-    BASENAMES.each do |basename|
-      if File.exist?(win_home(basename))
-        f.puts "rem #{basename} is skipped"
-      else
-        opt = File.directory?(original(basename)) ? ' /D' : ''
-        f.puts "mklink#{opt} \"#{win_home(basename)}\" \"#{original(basename)}\""
-      end
-    end
-  end
-  puts "#{LINK_BAT_FILENAME} is generated"
-end
-
 # setup
 # ----------
 
@@ -120,13 +102,13 @@ task 'install-vundle' do
     puts "#{target} alredy exists"
   else
     sh "git clone https://github.com/VundleVim/Vundle.vim.git #{target}"
-    begin
-      sh 'vim --version'
-    rescue
-      puts 'vim is not installed'
-    else
-      sh 'vim +PluginInstall +qall'
-    end
+  end
+  begin
+    sh 'vim --version'
+  rescue
+    puts 'vim is not installed'
+  else
+    sh 'vim +PluginInstall +qall'
   end
 end
 
