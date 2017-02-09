@@ -119,6 +119,7 @@ task 'install-tpm' do
     puts "#{target} alredy exists"
   else
     sh "git clone https://github.com/tmux-plugins/tpm #{target}"
+    sh "#{target}/scripts/install_plugins.sh"
   end
 end
 
