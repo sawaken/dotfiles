@@ -54,6 +54,18 @@ task 'link' do
   end
 end
 
+desc './deployed/に存在する全てのdotfileのリンクを貼る(既存ファイルを退ける)'
+task 'link-force' do
+  BASENAMES.each do |basename|
+    next if linked_to_me?(basename)
+    unless empty?(basename)
+      dest = home(basename) + Time.now.strftime('.%Y-%m-%d_%H-%M-%S')
+      mv(home(basename), dest)
+    end
+    symlink(original(basename), home(basename))
+  end
+end
+
 desc './deployed/に存在する全てのdotfileのリンクを切る'
 task 'unlink' do
   BASENAMES.each do |basename|
