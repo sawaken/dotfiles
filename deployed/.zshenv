@@ -1,6 +1,13 @@
 # --------------------------------------------------
 # .zshenvはどんな場合でも必ず最初に読み込まれる
 # --------------------------------------------------
+#
+# zshenvで設定されるPATHが/etc/zshprofileで上書きされるのを防ぐ
+# ※.zshenvの最初に書く
+if [[ "$(uname)" == 'Darwin' ]]; then
+  eval `/usr/libexec/path_helper -s`
+  setopt no_global_rcs
+fi
 
 # anyenvのパスを通す
 if [ -d $HOME/.anyenv ]; then
@@ -20,3 +27,4 @@ export PATH="$HOME/.local/bin:$PATH"
 if [[ "$(uname)" == 'Linux' ]]; then
   alias pbcopy='xsel --clipboard --input'
 fi
+
