@@ -47,3 +47,5 @@ set hlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " C-jでescape
 imap <C-j> <esc>
+" 改行でコメントを引き継がない
+set formatoptions-=ro
